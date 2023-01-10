@@ -1,0 +1,692 @@
+Last login: Mon Jan  9 21:29:55 on ttys000
+
+The default interactive shell is now zsh.
+To update your account to use zsh, please run `chsh -s /bin/zsh`.
+For more details, please visit https://support.apple.com/kb/HT208050.
+Mitchells-MBP:~ mitchellhazelhurst$ cd
+Mitchells-MBP:~ mitchellhazelhurst$ ls
+Applications		Dropbox			node_modules
+Creative Cloud Files	Library			package-lock.json
+Desktop			Movies			package.json
+Development_Practice	Music			repos
+Documents		Pictures
+Downloads		Public
+Mitchells-MBP:~ mitchellhazelhurst$ chmod -R +w repos
+Mitchells-MBP:~ mitchellhazelhurst$ rm -r repos
+Mitchells-MBP:~ mitchellhazelhurst$ ls repos
+ls: repos: No such file or directory
+Mitchells-MBP:~ mitchellhazelhurst$ mkdir repos
+Mitchells-MBP:~ mitchellhazelhurst$ cd repos/
+Mitchells-MBP:repos mitchellhazelhurst$ git clone git@github.com:mitchthestonky/git_test.git
+Cloning into 'git_test'...
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Receiving objects: 100% (3/3), done.
+Mitchells-MBP:repos mitchellhazelhurst$ cd git_test/
+Mitchells-MBP:git_test mitchellhazelhurst$ git remote -v
+origin	git@github.com:mitchthestonky/git_test.git (fetch)
+origin	git@github.com:mitchthestonky/git_test.git (push)
+Mitchells-MBP:git_test mitchellhazelhurst$ touch hello_world.txt
+Mitchells-MBP:git_test mitchellhazelhurst$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	hello_world.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+Mitchells-MBP:git_test mitchellhazelhurst$ git add hello_world.txt
+Mitchells-MBP:git_test mitchellhazelhurst$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	new file:   hello_world.txt
+
+Mitchells-MBP:git_test mitchellhazelhurst$ git commit -m "Add hello_world.txt"
+[main 47ddb2e] Add hello_world.txt
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 hello_world.txt
+Mitchells-MBP:git_test mitchellhazelhurst$ git status
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+Mitchells-MBP:git_test mitchellhazelhurst$ git log
+commit 47ddb2e61494ee0c57b3c41f4adf76137ab2b7a9 (HEAD -> main)
+Author: Mitch <109701403+mitchthestonky@users.noreply.github.com>
+Date:   Mon Jan 9 21:33:24 2023 +1300
+
+    Add hello_world.txt
+
+commit e2b3b796739d2729af35a03f34d0df0909d7a622 (origin/main, origin/HEAD)
+Author: mitchthestonky <109701403+mitchthestonky@users.noreply.github.com>
+Date:   Mon Jan 9 21:25:44 2023 +1300
+
+    Initial commit
+Mitchells-MBP:git_test mitchellhazelhurst$ code .
+Mitchells-MBP:git_test mitchellhazelhurst$ git status
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   README.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+Mitchells-MBP:git_test mitchellhazelhurst$ git add README.md
+Mitchells-MBP:git_test mitchellhazelhurst$ git status
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	modified:   README.md
+
+Mitchells-MBP:git_test mitchellhazelhurst$ git status
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	modified:   README.md
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   hello_world.txt
+
+Mitchells-MBP:git_test mitchellhazelhurst$ git add .
+Mitchells-MBP:git_test mitchellhazelhurst$ git status
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	modified:   README.md
+	modified:   hello_world.txt
+Mitchells-MBP:git_test mitchellhazelhurst$ git commit -m "Edit README.md and hello_world.txt"
+[main 2d26bf1] Edit README.md and hello_world.txt
+ 2 files changed, 4 insertions(+), 1 deletion(-)
+Mitchells-MBP:git_test mitchellhazelhurst$ git status
+On branch main
+Your branch is ahead of 'origin/main' by 2 commits.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+Mitchells-MBP:git_test mitchellhazelhurst$ git log
+commit 2d26bf1fefa96d998323f57ee4a42d1491acc5bf (HEAD -> main)
+Author: Mitch <109701403+mitchthestonky@users.noreply.github.com>
+Date:   Mon Jan 9 21:42:13 2023 +1300
+
+    Edit README.md and hello_world.txt
+
+commit 47ddb2e61494ee0c57b3c41f4adf76137ab2b7a9
+Author: Mitch <109701403+mitchthestonky@users.noreply.github.com>
+Date:   Mon Jan 9 21:33:24 2023 +1300
+
+    Add hello_world.txt
+
+commit e2b3b796739d2729af35a03f34d0df0909d7a622 (origin/main, origin/HEAD)
+Author: mitchthestonky <109701403+mitchthestonky@users.noreply.github.com>
+Date:   Mon Jan 9 21:25:44 2023 +1300
+
+    Initial commit
+Mitchells-MBP:git_test mitchellhazelhurst$ git push origin main
+Enumerating objects: 9, done.
+Counting objects: 100% (9/9), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (7/7), 668 bytes | 668.00 KiB/s, done.
+Total 7 (delta 0), reused 0 (delta 0), pack-reused 0
+To github.com:mitchthestonky/git_test.git
+   e2b3b79..2d26bf1  main -> main
+Mitchells-MBP:git_test mitchellhazelhurst$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+Mitchells-MBP:git_test mitchellhazelhurst$ cd
+Mitchells-MBP:~ mitchellhazelhurst$ ls
+Applications		Documents		Movies			node_modules
+Creative Cloud Files	Downloads		Music			package-lock.json
+Desktop			Dropbox			Pictures		package.json
+Development_Practice	Library			Public			repos
+Mitchells-MBP:~ mitchellhazelhurst$ cd Downloads/Coding/
+-bash: cd: Downloads/Coding/: No such file or directory
+Mitchells-MBP:~ mitchellhazelhurst$ cd Documents/Coding/
+Mitchells-MBP:Coding mitchellhazelhurst$ ls
+hello		hello world.js	js
+Mitchells-MBP:Coding mitchellhazelhurst$ cd
+Mitchells-MBP:~ mitchellhazelhurst$ ls
+Applications		Documents		Movies			node_modules
+Creative Cloud Files	Downloads		Music			package-lock.json
+Desktop			Dropbox			Pictures		package.json
+Development_Practice	Library			Public			repos
+Mitchells-MBP:~ mitchellhazelhurst$ mkdir OdinProject
+Mitchells-MBP:~ mitchellhazelhurst$ ls
+Applications		Downloads		OdinProject		package.json
+Creative Cloud Files	Dropbox			Pictures		repos
+Desktop			Library			Public
+Development_Practice	Movies			node_modules
+Documents		Music			package-lock.json
+Mitchells-MBP:~ mitchellhazelhurst$ cd OdinProject
+Mitchells-MBP:OdinProject mitchellhazelhurst$ ls
+Mitchells-MBP:OdinProject mitchellhazelhurst$ mkdir html-boilerplate
+Mitchells-MBP:OdinProject mitchellhazelhurst$ touch index.html
+Mitchells-MBP:OdinProject mitchellhazelhurst$ ls
+html-boilerplate	index.html
+Mitchells-MBP:OdinProject mitchellhazelhurst$ rm index.html
+Mitchells-MBP:OdinProject mitchellhazelhurst$ ls
+html-boilerplate
+Mitchells-MBP:OdinProject mitchellhazelhurst$ cd html-boilerplate
+Mitchells-MBP:html-boilerplate mitchellhazelhurst$ ls
+Mitchells-MBP:html-boilerplate mitchellhazelhurst$ touch index.html
+Mitchells-MBP:html-boilerplate mitchellhazelhurst$ ls
+index.html
+Mitchells-MBP:html-boilerplate mitchellhazelhurst$ code .
+Mitchells-MBP:html-boilerplate mitchellhazelhurst$ open ./index.html
+Mitchells-MBP:html-boilerplate mitchellhazelhurst$ open ./index.html
+Mitchells-MBP:html-boilerplate mitchellhazelhurst$ cd
+Mitchells-MBP:~ mitchellhazelhurst$ ls
+Applications		Downloads		OdinProject		package.json
+Creative Cloud Files	Dropbox			Pictures		repos
+Desktop			Library			Public
+Development_Practice	Movies			node_modules
+Documents		Music			package-lock.json
+Mitchells-MBP:~ mitchellhazelhurst$ cd OdinProject
+Mitchells-MBP:OdinProject mitchellhazelhurst$ mkdir odin-links-and-images
+Mitchells-MBP:OdinProject mitchellhazelhurst$ cd odin-links-and-images
+Mitchells-MBP:odin-links-and-images mitchellhazelhurst$ touch index.html
+Mitchells-MBP:odin-links-and-images mitchellhazelhurst$ ls
+index.html
+Mitchells-MBP:odin-links-and-images mitchellhazelhurst$ code .
+Mitchells-MBP:odin-links-and-images mitchellhazelhurst$ open ./index.html
+Mitchells-MBP:odin-links-and-images mitchellhazelhurst$ touch about.html
+Mitchells-MBP:odin-links-and-images mitchellhazelhurst$ ls
+about.html	index.html
+Mitchells-MBP:odin-links-and-images mitchellhazelhurst$ mkdir pages
+Mitchells-MBP:odin-links-and-images mitchellhazelhurst$ ls
+about.html	index.html	pages
+Mitchells-MBP:odin-links-and-images mitchellhazelhurst$ mv about.html pages/about.html
+Mitchells-MBP:odin-links-and-images mitchellhazelhurst$ ls
+index.html	pages
+Mitchells-MBP:odin-links-and-images mitchellhazelhurst$ open index.html
+Mitchells-MBP:odin-links-and-images mitchellhazelhurst$ ls
+index.html	pages
+Mitchells-MBP:odin-links-and-images mitchellhazelhurst$ mkdir images
+Mitchells-MBP:odin-links-and-images mitchellhazelhurst$ ls
+images		index.html	pages
+Mitchells-MBP:odin-links-and-images mitchellhazelhurst$ mv ~/Downloads/dog.jpg /images/dog.jpg
+mv: rename /Users/mitchellhazelhurst/Downloads/dog.jpg to /images/dog.jpg: No such file or directory
+Mitchells-MBP:odin-links-and-images mitchellhazelhurst$ cd
+Mitchells-MBP:~ mitchellhazelhurst$ ls
+Applications		Downloads		OdinProject		package.json
+Creative Cloud Files	Dropbox			Pictures		repos
+Desktop			Library			Public
+Development_Practice	Movies			node_modules
+Documents		Music			package-lock.json
+Mitchells-MBP:~ mitchellhazelhurst$ cd repos/
+Mitchells-MBP:repos mitchellhazelhurst$ ls
+git_test
+Mitchells-MBP:repos mitchellhazelhurst$ git clone git@github.com:mitchthestonky/odin-recipes.git
+Cloning into 'odin-recipes'...
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Receiving objects: 100% (3/3), done.
+Mitchells-MBP:repos mitchellhazelhurst$ ls
+git_test	odin-recipes
+Mitchells-MBP:repos mitchellhazelhurst$ cd odin-recipes
+Mitchells-MBP:odin-recipes mitchellhazelhurst$ ls
+README.md
+Mitchells-MBP:odin-recipes mitchellhazelhurst$ touch index.html
+Mitchells-MBP:odin-recipes mitchellhazelhurst$ code .
+Mitchells-MBP:odin-recipes mitchellhazelhurst$ git add index.html
+Mitchells-MBP:odin-recipes mitchellhazelhurst$ git log
+commit a045a7490037aa9850955422654c65a426312c02 (HEAD -> main, origin/main, origin/HEAD)
+Author: mitchthestonky <109701403+mitchthestonky@users.noreply.github.com>
+Date:   Tue Jan 10 15:58:47 2023 +1300
+
+    Initial commit
+Mitchells-MBP:odin-recipes mitchellhazelhurst$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	new file:   index.html
+
+Mitchells-MBP:odin-recipes mitchellhazelhurst$ git commit index.html
+[main 75896e6] Create html boilerplate and Odin Recipes header
+ 1 file changed, 12 insertions(+)
+ create mode 100644 index.html
+Mitchells-MBP:odin-recipes mitchellhazelhurst$ git push main origin
+fatal: 'main' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+Mitchells-MBP:odin-recipes mitchellhazelhurst$ git push origin main
+git loEnumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 517 bytes | 517.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+gTo github.com:mitchthestonky/odin-recipes.git
+   a045a74..75896e6  main -> main
+Mitchells-MBP:odin-recipes mitchellhazelhurst$ git log
+commit 75896e637c117f2f0164ff50ff43cb08ca7f1ed8 (HEAD -> main, origin/main, origin/HEAD)
+Author: Mitch <109701403+mitchthestonky@users.noreply.github.com>
+Date:   Tue Jan 10 16:02:08 2023 +1300
+
+    Create html boilerplate and Odin Recipes header
+
+commit a045a7490037aa9850955422654c65a426312c02
+Author: mitchthestonky <109701403+mitchthestonky@users.noreply.github.com>
+Date:   Tue Jan 10 15:58:47 2023 +1300
+
+    Initial commit
+Mitchells-MBP:odin-recipes mitchellhazelhurst$ ls
+README.md	index.html
+Mitchells-MBP:odin-recipes mitchellhazelhurst$ mkdir recipes
+Mitchells-MBP:odin-recipes mitchellhazelhurst$ cd recipes
+Mitchells-MBP:recipes mitchellhazelhurst$ ls
+Mitchells-MBP:recipes mitchellhazelhurst$ touch sushi.html
+Mitchells-MBP:recipes mitchellhazelhurst$ ls
+sushi.html
+Mitchells-MBP:recipes mitchellhazelhurst$ git add sushi.html
+Mitchells-MBP:recipes mitchellhazelhurst$ git commit sushi.html
+[main 39a8afc] Make sushi.html boilerplate and add header
+ 1 file changed, 12 insertions(+)
+ create mode 100644 recipes/sushi.html
+Mitchells-MBP:recipes mitchellhazelhurst$ git push origin main
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (4/4), 589 bytes | 589.00 KiB/s, done.
+Total 4 (delta 0), reused 0 (delta 0), pack-reused 0
+To github.com:mitchthestonky/odin-recipes.git
+   75896e6..39a8afc  main -> main
+Mitchells-MBP:recipes mitchellhazelhurst$ git log
+commit 39a8afc2597489c37f7005beb3b3461627c0da42 (HEAD -> main, origin/main, origin/HEAD)
+Author: Mitch <109701403+mitchthestonky@users.noreply.github.com>
+Date:   Tue Jan 10 16:10:14 2023 +1300
+
+    Make sushi.html boilerplate and add header
+
+commit 75896e637c117f2f0164ff50ff43cb08ca7f1ed8
+Author: Mitch <109701403+mitchthestonky@users.noreply.github.com>
+Date:   Tue Jan 10 16:02:08 2023 +1300
+
+    Create html boilerplate and Odin Recipes header
+
+commit a045a7490037aa9850955422654c65a426312c02
+Author: mitchthestonky <109701403+mitchthestonky@users.noreply.github.com>
+Date:   Tue Jan 10 15:58:47 2023 +1300
+
+    Initial commit
+Mitchells-MBP:recipes mitchellhazelhurst$ cd ./
+Mitchells-MBP:recipes mitchellhazelhurst$ ls
+sushi.html
+Mitchells-MBP:recipes mitchellhazelhurst$ cd ../
+Mitchells-MBP:odin-recipes mitchellhazelhurst$ ls
+README.md	index.html	recipes
+Mitchells-MBP:odin-recipes mitchellhazelhurst$ git add index.html
+Mitchells-MBP:odin-recipes mitchellhazelhurst$ git commit index.html
+[main 499a05a] Add link to sushi.html page with Header
+ 1 file changed, 1 insertion(+)
+Mitchells-MBP:odin-recipes mitchellhazelhurst$ git push origin main
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 431 bytes | 431.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To github.com:mitchthestonky/odin-recipes.git
+   39a8afc..499a05a  main -> main
+Mitchells-MBP:odin-recipes mitchellhazelhurst$ git log
+commit 499a05ac4edbf41d6aae5d7d16ea3c24a4670c8e (HEAD -> main, origin/main, origin/HEAD)
+Author: Mitch <109701403+mitchthestonky@users.noreply.github.com>
+Date:   Tue Jan 10 16:12:38 2023 +1300
+
+    Add link to sushi.html page with Header
+
+commit 39a8afc2597489c37f7005beb3b3461627c0da42
+Author: Mitch <109701403+mitchthestonky@users.noreply.github.com>
+Date:   Tue Jan 10 16:10:14 2023 +1300
+
+    Make sushi.html boilerplate and add header
+
+commit 75896e637c117f2f0164ff50ff43cb08ca7f1ed8
+Author: Mitch <109701403+mitchthestonky@users.noreply.github.com>
+Date:   Tue Jan 10 16:02:08 2023 +1300
+
+    Create html boilerplate and Odin Recipes header
+
+commit a045a7490037aa9850955422654c65a426312c02
+Author: mitchthestonky <109701403+mitchthestonky@users.noreply.github.com>
+Date:   Tue Jan 10 15:58:47 2023 +1300
+
+    Initial commit
+Mitchells-MBP:odin-recipes mitchellhazelhurst$ ls
+README.md	index.html	recipes
+Mitchells-MBP:odin-recipes mitchellhazelhurst$ cd recipes
+Mitchells-MBP:recipes mitchellhazelhurst$ mkdir photos
+Mitchells-MBP:recipes mitchellhazelhurst$ ls
+photos		sushi.html
+Mitchells-MBP:recipes mitchellhazelhurst$ git add sushi.html
+Mitchells-MBP:recipes mitchellhazelhurst$ git commit sushi.html
+[main 3954e89] Add sushi picture under the header
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+Mitchells-MBP:recipes mitchellhazelhurst$ git push sushi.html
+fatal: 'sushi.html' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+Mitchells-MBP:recipes mitchellhazelhurst$ git push origin main
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (4/4), 431 bytes | 431.00 KiB/s, done.
+Total 4 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To github.com:mitchthestonky/odin-recipes.git
+   499a05a..3954e89  main -> main
+Mitchells-MBP:recipes mitchellhazelhurst$ git log
+commit 3954e895bb8846a7007e4c01bfc8db0703c19b88 (HEAD -> main, origin/main, origin/HEAD)
+Author: Mitch <109701403+mitchthestonky@users.noreply.github.com>
+Date:   Tue Jan 10 16:19:11 2023 +1300
+
+    Add sushi picture under the header
+
+commit 499a05ac4edbf41d6aae5d7d16ea3c24a4670c8e
+Author: Mitch <109701403+mitchthestonky@users.noreply.github.com>
+Date:   Tue Jan 10 16:12:38 2023 +1300
+
+    Add link to sushi.html page with Header
+
+commit 39a8afc2597489c37f7005beb3b3461627c0da42
+Author: Mitch <109701403+mitchthestonky@users.noreply.github.com>
+Date:   Tue Jan 10 16:10:14 2023 +1300
+
+    Make sushi.html boilerplate and add header
+
+commit 75896e637c117f2f0164ff50ff43cb08ca7f1ed8
+Author: Mitch <109701403+mitchthestonky@users.noreply.github.com>
+Date:   Tue Jan 10 16:02:08 2023 +1300
+
+    Create html boilerplate and Odin Recipes header
+
+commit a045a7490037aa9850955422654c65a426312c02
+Author: mitchthestonky <109701403+mitchthestonky@users.noreply.github.com>
+...skipping...
+
+                   SUMMARY OF LESS COMMANDS
+
+      Commands marked with * may be preceded by a number, N.
+      Notes in parentheses indicate the behavior if N is given.
+      A key preceded by a caret indicates the Ctrl key; thus ^K is ctrl-K.
+
+  h  H                 Display this help.
+  q  :q  Q  :Q  ZZ     Exit.
+ ---------------------------------------------------------------------------
+
+                           MOVING
+
+  e  ^E  j  ^N  CR  *  Forward  one line   (or N lines).
+  y  ^Y  k  ^K  ^P  *  Backward one line   (or N lines).
+  f  ^F  ^V  SPACE  *  Forward  one window (or N lines).
+  b  ^B  ESC-v      *  Backward one window (or N lines).
+  z                 *  Forward  one window (and set window to N).
+  w                 *  Backward one window (and set window to N).
+  ESC-SPACE         *  Forward  one window, but don't stop at end-of-file.
+  d  ^D             *  Forward  one half-window (and set half-window to N).
+  u  ^U             *  Backward one half-window (and set half-window to N).
+  ESC-)  RightArrow *  Right one half screen width (or N positions).
+  ESC-(  LeftArrow  *  Left  one half screen width (or N positions).
+  ESC-}  ^RightArrow   Right to last column displayed.
+  ESC-{  ^LeftArrow    Left  to first column.
+HELP -- Press RETURN for more, or q when done...skipping...
+Author: Mitch <109701403+mitchthestonky@users.noreply.github.com>
+Date:   Tue Jan 10 16:19:11 2023 +1300
+
+    Add sushi picture under the header
+
+commit 499a05ac4edbf41d6aae5d7d16ea3c24a4670c8e
+Author: Mitch <109701403+mitchthestonky@users.noreply.github.com>
+Date:   Tue Jan 10 16:12:38 2023 +1300
+
+    Add link to sushi.html page with Header
+
+commit 39a8afc2597489c37f7005beb3b3461627c0da42
+Author: Mitch <109701403+mitchthestonky@users.noreply.github.com>
+Date:   Tue Jan 10 16:10:14 2023 +1300
+
+    Make sushi.html boilerplate and add header
+
+commit 75896e637c117f2f0164ff50ff43cb08ca7f1ed8
+Author: Mitch <109701403+mitchthestonky@users.noreply.github.com>
+Date:   Tue Jan 10 16:02:08 2023 +1300
+
+    Create html boilerplate and Odin Recipes header
+
+commit a045a7490037aa9850955422654c65a426312c02
+Author: mitchthestonky <109701403+mitchthestonky@users.noreply.github.com>
+Mitchells-MBP:recipes mitchellhazelhurst$ cd ../
+Mitchells-MBP:odin-recipes mitchellhazelhurst$ ls
+README.md	index.html	recipes
+Mitchells-MBP:odin-recipes mitchellhazelhurst$ git add README.md
+Mitchells-MBP:odin-recipes mitchellhazelhurst$ git commit README.md
+hint: Waiting for your editor to close the file... error: There was a problem with the editor 'vi'.
+Please supply the message using either -m or -F option.
+Mitchells-MBP:odin-recipes mitchellhazelhurst$ git push origin main
+Everything up-to-date
+Mitchells-MBP:odin-recipes mitchellhazelhurst$ ls
+README.md	index.html	recipes
+Mitchells-MBP:odin-recipes mitchellhazelhurst$ git add recipes/photos/
+Mitchells-MBP:odin-recipes mitchellhazelhurst$ git commit recipes/photos/
+[main 3299fd2] Adding photo folder to github
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 recipes/photos/sushi.jpg
+Mitchells-MBP:odin-recipes mitchellhazelhurst$ git push origin main
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (5/5), 132.02 KiB | 598.00 KiB/s, done.
+Total 5 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To github.com:mitchthestonky/odin-recipes.git
+   3954e89..3299fd2  main -> main
+Mitchells-MBP:odin-recipes mitchellhazelhurst$ git log
+commit 3299fd2e517e221c944e271440f5217060a45a42 (HEAD -> main, origin/main, origin/HEAD)
+Author: Mitch <109701403+mitchthestonky@users.noreply.github.com>
+Date:   Tue Jan 10 16:23:32 2023 +1300
+
+    Adding photo folder to github
+
+commit 3954e895bb8846a7007e4c01bfc8db0703c19b88
+Author: Mitch <109701403+mitchthestonky@users.noreply.github.com>
+Date:   Tue Jan 10 16:19:11 2023 +1300
+
+    Add sushi picture under the header
+
+commit 499a05ac4edbf41d6aae5d7d16ea3c24a4670c8e
+Author: Mitch <109701403+mitchthestonky@users.noreply.github.com>
+Date:   Tue Jan 10 16:12:38 2023 +1300
+
+    Add link to sushi.html page with Header
+
+commit 39a8afc2597489c37f7005beb3b3461627c0da42
+Author: Mitch <109701403+mitchthestonky@users.noreply.github.com>
+Date:   Tue Jan 10 16:10:14 2023 +1300
+
+    Make sushi.html boilerplate and add header
+
+commit 75896e637c117f2f0164ff50ff43cb08ca7f1ed8
+Mitchells-MBP:odin-recipes mitchellhazelhurst$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	modified:   README.md
+
+Mitchells-MBP:odin-recipes mitchellhazelhurst$ git commit README.md
+[main 7de4e94] Writing Readme.md message
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+Mitchells-MBP:odin-recipes mitchellhazelhurst$ git push origin main
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 426 bytes | 426.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To github.com:mitchthestonky/odin-recipes.git
+   3299fd2..7de4e94  main -> main
+Mitchells-MBP:odin-recipes mitchellhazelhurst$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+Mitchells-MBP:odin-recipes mitchellhazelhurst$ git log
+commit 7de4e94ea9fe459f66055e474296785527b4ef86 (HEAD -> main, origin/main, origin/HEAD)
+Author: Mitch <109701403+mitchthestonky@users.noreply.github.com>
+Date:   Tue Jan 10 16:24:46 2023 +1300
+
+    Writing Readme.md message
+
+commit 3299fd2e517e221c944e271440f5217060a45a42
+Author: Mitch <109701403+mitchthestonky@users.noreply.github.com>
+Date:   Tue Jan 10 16:23:32 2023 +1300
+
+    Adding photo folder to github
+
+commit 3954e895bb8846a7007e4c01bfc8db0703c19b88
+Author: Mitch <109701403+mitchthestonky@users.noreply.github.com>
+Date:   Tue Jan 10 16:19:11 2023 +1300
+
+    Add sushi picture under the header
+
+commit 499a05ac4edbf41d6aae5d7d16ea3c24a4670c8e
+Author: Mitch <109701403+mitchthestonky@users.noreply.github.com>
+Date:   Tue Jan 10 16:12:38 2023 +1300
+
+    Add link to sushi.html page with Header
+
+commit 39a8afc2597489c37f7005beb3b3461627c0da42
+Mitchells-MBP:odin-recipes mitchellhazelhurst$ ls
+README.md	index.html	recipes
+Mitchells-MBP:odin-recipes mitchellhazelhurst$ git add recipes/sushi.html
+Mitchells-MBP:odin-recipes mitchellhazelhurst$ git commit recipes/sushi.html
+[main 14bc9dc] Create a description header and paragraph
+ 1 file changed, 4 insertions(+), 1 deletion(-)
+Mitchells-MBP:odin-recipes mitchellhazelhurst$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+Mitchells-MBP:odin-recipes mitchellhazelhurst$ cd recipes/
+Mitchells-MBP:recipes mitchellhazelhurst$ git add sushi.html
+Mitchells-MBP:recipes mitchellhazelhurst$ git commit sushi.html 
+[main 819c02d] Add ingredients list and header
+ 1 file changed, 13 insertions(+), 1 deletion(-)
+Mitchells-MBP:recipes mitchellhazelhurst$ git push origin main
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 537 bytes | 537.00 KiB/s, done.
+Total 4 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To github.com:mitchthestonky/odin-recipes.git
+   14bc9dc..819c02d  main -> main
+Mitchells-MBP:recipes mitchellhazelhurst$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+Mitchells-MBP:recipes mitchellhazelhurst$ cd ../
+Mitchells-MBP:odin-recipes mitchellhazelhurst$ git add recipes/sushi.html
+Mitchells-MBP:odin-recipes mitchellhazelhurst$ git commit recipes/sushi.html 
+[main 3210278] Make steps list and header
+ 1 file changed, 11 insertions(+), 4 deletions(-)
+Mitchells-MBP:odin-recipes mitchellhazelhurst$ git push origin main
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 626 bytes | 626.00 KiB/s, done.
+Total 4 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To github.com:mitchthestonky/odin-recipes.git
+   819c02d..3210278  main -> main
+Mitchells-MBP:odin-recipes mitchellhazelhurst$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+Mitchells-MBP:odin-recipes mitchellhazelhurst$ open index.html
+Mitchells-MBP:odin-recipes mitchellhazelhurst$ ls
+README.md	index.html	recipes
+Mitchells-MBP:odin-recipes mitchellhazelhurst$ git add recipes/sushi.html 
+Mitchells-MBP:odin-recipes mitchellhazelhurst$ git commit recipes/sushi.html 
+[main 038ef11] Fix image src to make display Please note: Image only displays in live server but not on html in browser
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+Mitchells-MBP:odin-recipes mitchellhazelhurst$ git push origin main
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 493 bytes | 493.00 KiB/s, done.
+Total 4 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To github.com:mitchthestonky/odin-recipes.git
+   3210278..038ef11  main -> main
+Mitchells-MBP:odin-recipes mitchellhazelhurst$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+Mitchells-MBP:odin-recipes mitchellhazelhurst$ git log
+commit 038ef11bc245ef3c2bf71e2d622a254c851d408d (HEAD -> main, origin/main, origin/HEAD)
+Author: Mitch <109701403+mitchthestonky@users.noreply.github.com>
+Date:   Tue Jan 10 16:48:07 2023 +1300
+
+    Fix image src to make display
+    Please note:
+    Image only displays in live server but not on html in browser
+
+commit 3210278a40892b45ddcd3cf3535c0ff79c089b0e
+Author: Mitch <109701403+mitchthestonky@users.noreply.github.com>
+Date:   Tue Jan 10 16:39:46 2023 +1300
+
+    Make steps list and header
+
+commit 819c02d2bd62a2d92446d7f6d9d073e4778193cc
+Author: Mitch <109701403+mitchthestonky@users.noreply.github.com>
+Date:   Tue Jan 10 16:33:13 2023 +1300
+
+    Add ingredients list and header
+
+commit 14bc9dc1e2ee6e369077ce65caab26749a2ba476
+Author: Mitch <109701403+mitchthestonky@users.noreply.github.com>
+Date:   Tue Jan 10 16:29:08 2023 +1300
+
+    Create a description header and paragraph
+:
